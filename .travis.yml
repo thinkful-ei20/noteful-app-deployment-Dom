@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: Gs1CYrdsEC0+pjU4d8npTBVbO4d7edej6Wq/wmug2Ia23MLPfu3j14AVumGAQkId+8JRZpe/080DdpVV90pxV51cB+KY6zyYzSL4HemoEdKHyq2KAssgabYZjROF5ozGkj4gTzxH5EJUx8U5K1FgV/ZqKi4tVGBVjXuX2FkHEuhO59TKUFHUf7cq6GVzjzMib5a4sChvJMsvWNtU8PBfNXtHtyRZlorzuyqrv4XTwVJ5XZUzi4TmTNY98ljv07o0JWgwee1pg/idP/bAcDB7AFRwo07n83iaP7oyzbLYw1tRBlpaU5BbsRP2gtSRPXtcyVa2vLHqyQHcwJ/a8YbdVYn+E1F02xZzDyGTsAzvpIOcHMi36eKDK+8GRMWFG1BmwmU46JgYxB+JGK+85ockRJQc4mycfQDgZnH48nv8aqtene4UnZIJsQgVni7/JVdIb9R11BaOxxmwB4aFUXh550sIbM/neCTTgAx6VhfIbcRyKEAbz3nlyUOZRTlB4HQnNrN17Sfq5BK/JTwHr5jFN4BZe2B+SrHwzpBNN1rY9Z/4ba2eHoRQGYH7diqNKCpJrB1pEp2HfYdiQ+id8BGcZQtovlBIlKBezVorVhys9j4dDMMQ75A08WeIaUQ+9Obmp5SZqd61ayguCx2mQsOrt6/vkkMoYVOQRF7vr+4e/p0=
+  app: mighty-beyond-96010
+  on:
+    repo: mckoyd/notefulAppDeployed
