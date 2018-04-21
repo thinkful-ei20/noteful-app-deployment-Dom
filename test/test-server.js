@@ -156,4 +156,14 @@ describe('PUT /api/notes/:id', () => {
   });
 });
 
+describe('DELETE /api/notes/:id', () => {
+  it('should delete an item by id', () => {
+    return chai.request(app)
+      .delete('/api/notes/1004')
+      .then(res => {
+        expect(res).to.have.status(204);
+        expect(res.body).to.be.a('object').that.is.empty;
+      });
+  });
+});
 
