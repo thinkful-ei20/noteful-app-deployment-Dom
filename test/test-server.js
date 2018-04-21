@@ -132,4 +132,28 @@ describe('PUT /api/notes/:id', () => {
         expect(res.body.id).to.be.equal(1004);
       });
   });
+  it('should respond with a 404 for an invalid ID', () => {
+    return chai.request(app)
+      .put('/api/notes/DOESNOTEXIST')
+      .send({title: 'New Title', content: 'Something witty.'})
+      .then(res => {
+        expect(res).to.have.status(404);
+        expect(res.body).to.be.a('object');
+        expect(res.body).to.have.keys(['message', 'error']);
+        expect(res.body.message).to.be.equal('Not Found');
+      });
+  });
+  it('should return an object with a message property "Missing title in request body" when missing "title" field', () => {
+    return chai.request(app)
+      .put('/api/notes/1004')
+      .send({content: 'Something witty.'})
+      .then (res => {
+        expect(res).to.have.status(400);
+        expect(res.body).to.be.a('object');
+        expect(res.body).to.have.keys(['message', 'error']);
+        expect(res.body.message).to.be.equal('Missing `title` in request body');
+      });
+  });
 });
+
+
